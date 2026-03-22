@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <title>Lista de Tarefas</title>
 </head>
 <body>
@@ -11,21 +11,27 @@
     <section>
         <main>
             <div>
-                <p>Data de Inicio</p>
+                <label for="dataInicio">Data de Início</label>
                 <input type="date" id="dataInicio">
-                <p>Data Fim</p>
+
+                <label for="dataFim">Data Fim</label>
                 <input type="date" id="dataFim">
-                <p>Tarefa</p>
-                <input type="text" id="nometarefa">
-                <p></p>
-                <button type="button" id="cadastrar" onclick="capturaDados()">Cadastrar</button>
+
+                <label for="nometarefa">Tarefa</label>
+                <input type="text" id="nometarefa" placeholder="Digite a tarefa...">
+
+                <div>
+                    <button type="button" id="cadastrar" onclick="criarTarefa()">Criar Tarefa</button>
+                    <button type="button" id="excluir" onclick="excluirTarefa()">Excluir Tarefa</button>
+                </div>
             </div>
-            <div>
-                <p id="resultado"></p> 
+
+            <div class="resp">
+                <div id="resultado"></div> 
             </div>
         </main>
     </section>
     <footer></footer>
-    <script src="assets/JS/script.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>
