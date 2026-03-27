@@ -1,8 +1,8 @@
-
-
+onload = function() {
+    listarTarefas();
+};
 
 function inputDados(){
-
     const uuid = crypto.randomUUID();
     const tarefa = {};
 
@@ -19,6 +19,36 @@ function inputDados(){
 
 function criarTarefa(){
     let tarefaCadastro = inputDados ();
-
    localStorage.setItem(`${tarefaCadastro.id}`, JSON.stringify(tarefaCadastro));
+   listarTarefas();
 }
+
+function listarTarefas(){
+    const listaElemento = document.getElementById('resultado');
+    
+    listaElemento.innerHTML = '';
+
+    for (let i = 0; i < localStorage.length; i++) {
+        const chave = localStorage.key(i);
+        const dadoRaw = localStorage.getItem(chave);
+
+        try {
+            const tarefa = JSON.parse(dadoRaw);
+            const li = document.createElement('li');
+            li.textContent = tarefa.nome;
+            li.classList.add("destaque");
+    
+            listaElemento.appendChild(li);
+        } catch (e) {
+           
+            continue; 
+        }
+    }
+}
+
+function excluirTarefa(id){
+   
+    localStorage.removeItem(id);
+    listarTarefas();
+}
+
