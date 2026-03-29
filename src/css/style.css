@@ -12,18 +12,35 @@ html, body {
 
 header{
     background-color: blueviolet;
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+ul{
+    display: flex;
+    gap: 8%;
+    list-style: none;
 }
 section{
-    background-color: black;
+    background-color: white;
     padding-top: 20px;
     height: 100%;
     
 }
 
 .destaque {
-  color: white;
-  background-color:black;
+  color: black;
+  background-color:white;
   padding: 20px;
   border: 2px solid black;
+  list-style: none;
+}
+.resp{
+   
+    background-color: white;
+    color: black;
+    margin: 2%;
+    border: 2px solid black ;
+    border-radius: 10px;
 }
