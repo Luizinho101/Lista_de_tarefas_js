@@ -8,29 +8,20 @@
 </head>
 <body>
     <header>
+        <ul>
+            <li>Lista de Tarefas</li>
+            <li>Minhas tarefas</li>
+            <li>Nova lista</li>
+        </ul>
         
     </header>
     <section>
         <main>
-            <div>
-                <label for="dataInicio">Data de Início</label>
-                <input type="date" id="dataInicio">
-
-                <label for="dataFim">Data Fim</label>
-                <input type="date" id="dataFim">
-
-                <label for="nometarefa">Tarefa</label>
-                <input type="text" id="nometarefa" placeholder="Digite a tarefa...">
-
-                <div>
-                    <button type="button" id="cadastrar" onclick="criarTarefa()">Criar Tarefa</button>
-                    <button type="button" id="excluir" onclick="excluirTarefa()">Excluir Tarefa</button>
-                    <button type="button" id="listar" onclick="listarTarefas()">Listar Tarefa</button>
-                </div>
-            </div>
 
             <div class="resp">
                 <div id="resultado"></div> 
+                <button type="button" onclick="teste()"> crair Nova Tarefa</button>
+
             </div>
         </main>
     </section>
