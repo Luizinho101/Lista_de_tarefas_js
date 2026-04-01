@@ -26,7 +26,6 @@ function renderizaTarefas (){
 
         botaoDeletar.textContent = "Deletar";
         botaoDeletar.type = 'button';
-        botaoDeletar.id = 'deletar';
         botaoDeletar.classList.add("botoes");
         botaoDeletar.classList.add("botaoDeletar");
         botaoDeletar.onclick = function (){
@@ -36,13 +35,11 @@ function renderizaTarefas (){
 
         botaoAtualizar.textContent = "Atualizar";
         botaoAtualizar.type = 'button';
-        botaoAtualizar.id = 'id_btn_atualizar';
         botaoAtualizar.classList.add("botoes");
         botaoAtualizar.classList.add("botaoAtualizar");
 
         botaoVer.textContent = "Ver";
         botaoVer.type = 'button';
-        botaoVer.id = 'id_btn_ver';
         botaoVer.classList.add("botoes");
         botaoVer.classList.add("botaoVer");
         botaoVer.onclick = function (){
