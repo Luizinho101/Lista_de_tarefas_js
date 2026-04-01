@@ -37,6 +37,9 @@ function renderizaTarefas (){
         botaoAtualizar.type = 'button';
         botaoAtualizar.classList.add("botoes");
         botaoAtualizar.classList.add("botaoAtualizar");
+        botaoAtualizar.onclick = function (){
+            renderizar_AtualizarTarefa(tarefa.id);
+        }
 
         botaoVer.textContent = "Ver";
         botaoVer.type = 'button';
@@ -202,5 +205,54 @@ function criarTarefa(titulo , descricao){
     
 
    localStorage.setItem(`${tarefa.id}`, JSON.stringify(tarefa));
+   renderizaTarefas();
+}
+
+function renderizar_AtualizarTarefa(id){
+    const container = document.getElementById("resultado");
+    container.innerHTML = ""; 
+
+    const tituloTarefa = document.createElement('input');
+    const descricaoTarefa = document.createElement('input');
+    const botaoVoltar = document.createElement('button');
+    const botaoSalvar = document.createElement('button');
+
+    const dadosBrutos = listarTarefa(id);
+    const tarefa = JSON.parse(dadosBrutos);
+
+    tituloTarefa.placeholder = `${tarefa.titulo}`;
+    tituloTarefa.id = 'id_input_atulizarTarefa';
+
+    descricaoTarefa.placeholder = `${tarefa.descricao}`;
+    descricaoTarefa.id = 'id_input_atulizarDescricao';
+
+    botaoVoltar.textContent = 'Voltar';
+    botaoVoltar.onclick = function (){
+        renderizaTarefas();
+    }
+
+    botaoSalvar.textContent = 'Salvar';
+    botaoSalvar.onclick = function (){
+        atualizarTarefa (id)
+    }
+
+
+    container.appendChild(tituloTarefa);
+    container.appendChild(descricaoTarefa);
+    container.appendChild(botaoVoltar);
+    container.appendChild(botaoSalvar);
+}
+
+function atualizarTarefa (idTarefa){
+
+    const titulo = document.getElementById('id_input_atulizarTarefa').value;
+    const descricao = document.getElementById('id_input_atulizarDescricao').value;
+
+    const tarefa = {};
+    tarefa.id = idTarefa
+    tarefa.titulo = titulo;
+    tarefa.descricao = descricao;
+
+    localStorage.setItem(`${tarefa.id}`, JSON.stringify(tarefa));
    renderizaTarefas();
 }
